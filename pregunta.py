@@ -18,11 +18,11 @@ def clean_general(row):
 
 def clean_barrio(row):
     row = row.lower()
-    row = row.strip()
+    #row = row.strip()
     row = row.replace("-", " ")
     row = row.replace("_", " ")
-    row = row.replace(".", " ")
-    row = row.replace(" ", "")
+    #row = row.replace(".", " ")
+    #row = row.replace(" ", "")
 
     return row
 
@@ -63,7 +63,7 @@ def clean_data():
     return df
 
 
-""" clean_data().barrio.value_counts().to_list() == [
+""" A = [
         990,
         483,
         423,
@@ -290,4 +290,8 @@ def clean_data():
         1,
         1,
     ]
- """
+
+B = clean_data()['barrio'].value_counts()
+for i in range(len(B)):
+    if A[i] != B[i]:
+        print(f"{i}, test: {A[i]}, Mio: {B[i]}") """
