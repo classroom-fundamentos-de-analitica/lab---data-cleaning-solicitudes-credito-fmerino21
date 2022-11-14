@@ -24,6 +24,8 @@ def clean_barrio(row):
     row = row.replace(".", " ")
     row = row.replace(" ", "")
 
+    return row
+
 def clean_date(row):
     row_split = row.split("/")
     if len(row_split[0]) <= 2:
